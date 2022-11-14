@@ -1,0 +1,6 @@
+insert into course (id, name, author)
+values(1, 'learn ai', 'ai2045')
+
+select * from course
+
+delete from course where id=1
