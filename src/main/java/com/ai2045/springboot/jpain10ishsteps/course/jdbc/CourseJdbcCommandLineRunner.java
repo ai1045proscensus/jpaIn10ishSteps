@@ -24,6 +24,13 @@ public class CourseJdbcCommandLineRunner implements CommandLineRunner{
 	 */
 	public void run(String... args) throws Exception {
 		repo.insert();
+		repo.deleteTask(1);
+		repo.insert(new Course(1, "hay", "hu"));
+		repo.insert(new Course(2, "hay", "hu"));
+		repo.insert(new Course(3, "hay", "hu"));
+		repo.insert(new Course(4, "hay", "hu"));
+		repo.deleteTask(2);
+		repo.deleteTask(4);
 	}
 
 }

@@ -20,11 +20,29 @@ public class CourseJdbcRepository {
 				values(1, 'learn ai', 'ai2045')
 			""";
 
+	private static String DELETE_QUERY = """
+			delete from course where id = ?
+			""";
+
+	private static final String INSERT_QUERY_PARAMETERIZED = """
+				insert into course (id, name, author)
+				values(?, ?, ?)
+			""";
+
 	/**
-	 * the thing which enables you to fire this insert query
-	 * when the application starts up is the CommandLineRunner
+	 * the thing which enables you to fire this insert query when the application
+	 * starts up is the CommandLineRunner
 	 */
 	public void insert() {
 		springJdbcTemplate.update(INSERT_QUERY);
+	}
+
+	public void insert(Course course) {
+		springJdbcTemplate.update(INSERT_QUERY_PARAMETERIZED, course.getId(), 
+				course.getName(), course.getAuthor());
+	}
+
+	public void deleteTask(int id) {
+		springJdbcTemplate.update(DELETE_QUERY, id);
 	}
 }
