@@ -6,6 +6,11 @@ public class Course {
 	String name;
 	String author;
 	
+	public Course() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
 	public Course(long id, String name, String author) {
 		super();
 		this.id = id;
@@ -30,6 +35,11 @@ public class Course {
 	}
 	public void setAuthor(String author) {
 		this.author = author;
+	}
+
+	@Override
+	public String toString() {
+		return "Course [id=" + id + ", name=" + name + ", author=" + author + "]";
 	}
 	
 
