@@ -1,9 +1,27 @@
-package com.ai2045.springboot.jpain10ishsteps.course.jdbc;
+package com.ai2045.springboot.jpain10ishsteps.course;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+/**
+ * 
+ * @author ai1045
+ *
+ */
+
+@Entity(name = "Course") // mapping von diesem bean zur tabelle course, use this mapping for crud operations
+// man kann hier unten unten bei spalten attribut name in klammern weglassen,
+// da attribut und spaltennamen gleich sind (bzw bean und tabellenname)
 public class Course {
 	
+	@Id // Specifies the primary key of an entity
 	long id;
+	
+	@Column(name = "name") // mappe attribut name zur spalte "name"
 	String name;
+	
+	@Column(name = "author")
 	String author;
 	
 	public Course() {

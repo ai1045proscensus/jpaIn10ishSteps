@@ -5,6 +5,8 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import com.ai2045.springboot.jpain10ishsteps.course.Course;
+
 
 /**
  * 
@@ -61,7 +63,7 @@ public class CourseJdbcRepository {
 				course.getName(), course.getAuthor());
 	}
 
-	public void deleteTask(int id) {
+	public void deleteById(int id) {
 		springJdbcTemplate.update(DELETE_QUERY, id);
 	}
 
@@ -79,7 +81,7 @@ public class CourseJdbcRepository {
 	 * mappedClass : the class that each row should be mapped to.
 	 * bei uns: Course)
 	 */
-	public Course selectById(long id) {
+	public Course findById(long id) {
 		return springJdbcTemplate.queryForObject(SELECT_QUERY_PARAMETERIZED, new BeanPropertyRowMapper<Course>(Course.class), id);
 	}
 }
