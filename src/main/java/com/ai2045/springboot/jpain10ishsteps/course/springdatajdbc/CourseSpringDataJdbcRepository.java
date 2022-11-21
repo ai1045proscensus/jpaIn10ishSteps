@@ -1,4 +1,4 @@
-package com.ai2045.springboot.jpain10ishsteps.course.jdbc;
+package com.ai2045.springboot.jpain10ishsteps.course.springdatajdbc;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
@@ -21,7 +21,7 @@ import com.ai2045.springboot.jpain10ishsteps.course.Course;
  */
 
 @Repository // something which would "talk" to a db
-public class CourseJdbcRepository {
+public class CourseSpringDataJdbcRepository {
 
 	/**
 	 * the thing which enables you to fire queries
