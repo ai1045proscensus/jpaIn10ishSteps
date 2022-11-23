@@ -75,6 +75,14 @@ public class CourseCommandLineRunner implements CommandLineRunner{
 		
 		System.out.println(repo.findById(1l));
 		System.out.println(repo.findById(3l));
+		
+		System.out.println(repo.findAll());
+		System.out.println(repo.count());
+		
+		repo.save(new Course(5, "HUUUUU", "HU"));
+		repo.save(new Course(6, "HUUUUU", "HU"));
+		System.out.println(repo.findByAuthor("HU"));
+		System.out.println(repo.findByName("HUUUUU"));
 	}
 
 }
